@@ -20,7 +20,17 @@ public class WebScraper {
         urlScanner.close();
         return contents;
     }
+    public static int countWord(final String url) {
+        String output = urlToString(url);
+        int count = 0;
+        for (int i = 0; i < output.length() - 1; i++) {
+            if (output.substring(i, i + 1).equals(" ")) {
+                count++;
+            }
+        }
+        return count;
+    }
     public static void main(String[] unused){
-        System.out.println("HERE");
+        System.out.println(urlToString("http://erdani.com/tdpl/hamlet.txt"));
     }
 }
