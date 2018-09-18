@@ -30,6 +30,16 @@ public class WebScraper {
         }
         return count;
     }
+    public static int countUniqueWord(final String url, final String search) {
+        int count = 0;
+        String output = urlToString(url);
+        for (int i = 0; i < output.length(); i++) {
+            if (output.contains(search)) {
+                count++;
+            }
+        }
+        return count;
+    }
     public static void main(String[] unused){
         System.out.println(urlToString("http://erdani.com/tdpl/hamlet.txt"));
     }
